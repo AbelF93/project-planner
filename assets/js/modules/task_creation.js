@@ -15,8 +15,16 @@ export function addList() {
     const taskItem = document.createElement("li");
     taskItem.classList.add("task-list__task");
     taskItem.innerHTML = inputList.value;
-    taskItem.dataset.duedate = "2023-10-20"; // Ajout après push
+    
+    // Ajouter un champ de saisie pour la date d'échéance
+    const dueDateInput = document.createElement("input");
+    dueDateInput.type = "date";
+    taskItem.appendChild(dueDateInput);
+    
     taskList.appendChild(taskItem);
+    
+    inputList.value = "";
   }
-  inputList.value = "";
 }
+
+
