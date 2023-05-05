@@ -1,6 +1,13 @@
-import { daysStay } from "./daysStay.js";
-import { deleteTaskHandler } from "./deleteTaskHandler.js";
-const inputList = document.querySelector("input");
+
+//import { daysStay } from "./daysStay.js";
+//import { deleteTaskHandler } from "./deleteTaskHandler.js";
+
+
+const inputList = document.getElementById("task-storage");
+const inputContent = document.getElementById("task-content");
+const inputDate = document.getElementById("task-date");
+
+
 const taskSection = document.createElement("section");
 
 taskSection.innerHTML = `<ul class="task-list"></ul>`;
@@ -12,25 +19,34 @@ export const taskButton = document.getElementsByClassName("task-button")[0];
 export const deleteBtn = document.getElementsByClassName('delete-task');
 
 export function addList() {
-  if (inputList.value === "") {
+  if ((inputList.value === "")||(inputContent.value === "")||(inputDate.value === "")) {
     alert("Please, write something.");
   } else {
     const taskItem = document.createElement("li");
     taskItem.classList.add("task-list__task");
     taskItem.innerHTML = inputList.value;
-    
 
     const deleteTask = document.createElement("button");
     deleteTask.type = 'button';
     deleteTask.classList.add('delete-task');
-
     deleteBtn.deleteTaskHandler(taskItem);
 
+    const taskContent = document.createElement("p");
+    taskContent.classList.add("task-list__content");
+    taskContent.innerHTML = inputContent.value;
+    //const taskDate = document.createElement("p");
+   // taskDate.classList.add("task-list__date");
+   //taskDate.innerHTML = inputDate.value;
+    taskItem.appendChild(taskContent);
+   // taskItem.appendChild(taskDate);
     taskItem.appendChild(deleteTask);
     taskList.appendChild(taskItem);
-  
-    inputList.value = "";
   }
+
+  inputList.value = "";
+  inputContent.value = "";
+  inputDate.value = "";
+
 }
 
 
@@ -46,5 +62,5 @@ inputElement.addEventListener("change", () => {
   message.textContent = `Il reste ${days} jours avant la date limite.`;
 });
 
-body.appendChild(inputElement);
-body.appendChild(message);
+//body.appendChild(inputElement);
+//body.appendChild(message);
