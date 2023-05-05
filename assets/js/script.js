@@ -7,11 +7,9 @@ import { sortTasks } from "./sortTasks.js";
 taskButton.addEventListener("click", addList);
 
 // Add Due Date
-// const dueDate = "2023-10-20";
-const days = daysStay(dueDate);
+
 const message = document.createElement("p");
-// Pour tester le nb de jours restants en brut
-// message.textContent = `Il reste ${days} jours avant la date limite.`;
+
 const body = document.querySelector("body");
 body.appendChild(message);
 
