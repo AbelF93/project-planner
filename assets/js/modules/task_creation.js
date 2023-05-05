@@ -22,7 +22,7 @@ export function addList() {
                    toDoCheckbox.setAttribute("type","checkbox");
                    toDoCheckbox.setAttribute("id","checkbox__to-do");
                    toDoCheckbox.setAttribute("name","to-do");
-                   let toDoLabel = document.createElement('label');
+                   const toDoLabel = document.createElement('label');
                    toDoLabel.setAttribute("for","to-do");
                    toDoLabel.setAttribute("id","label__to-do");
                    const toDoLabelText = document.createTextNode('To Do');
@@ -32,7 +32,7 @@ export function addList() {
                     doingCheckbox.setAttribute("type","checkbox");
                     doingCheckbox.setAttribute("id","checkbox__doing");
                     doingCheckbox.setAttribute("name","doing");
-                    let doingLabel = document.createElement('label');
+                    const doingLabel = document.createElement('label');
                     doingLabel.setAttribute("for","doing");
                     doingLabel.setAttribute("id","label__doing");
                     const doingLabelText = document.createTextNode('Doing');
@@ -42,9 +42,9 @@ export function addList() {
                     doneCheckbox.setAttribute("type","checkbox");
                     doneCheckbox.setAttribute("id","checkbox__done");
                     doneCheckbox.setAttribute("name","done");
-                    let doneLabel = document.createElement('label');
-                    toDoLabel.setAttribute("for","done");
-                    toDoLabel.setAttribute("id","label__done");
+                    const doneLabel = document.createElement('label');
+                    doneLabel.setAttribute("for","done");
+                    doneLabel.setAttribute("id","label__done");
                     const doneLabelText = document.createTextNode('Done');
           doneLabel.appendChild(doneLabelText);
        doneStatusBox.appendChild(doneLabel);
