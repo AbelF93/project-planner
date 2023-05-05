@@ -1,4 +1,6 @@
-const inputList = document.querySelector("input");
+
+
+export const inputList = document.querySelector("input");
 const taskSection = document.createElement("section");
 
 taskSection.innerHTML = `<ul class="task-list"></ul>`;
@@ -15,6 +17,9 @@ export function addList() {
     taskItem.classList.add("task-list__task");
     taskItem.innerHTML = inputList.value;
     taskList.appendChild(taskItem);
+    
   }
+  
   inputList.value = "";
+
 }
