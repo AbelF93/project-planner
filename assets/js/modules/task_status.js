@@ -5,6 +5,11 @@ export const doneBox = document.getElementById('checkbox__done');
 const doingBox = document.getElementById('checkbox__doing');
 const toDoBox = document.getElementById('checkbox__to-do');
 
+export function doneStatus(e){
+    if(e.target === "LI"){
+        e.target.classList.toggle('task__done');
+    }
+};
 
 // Add event listeners to each checkbox
 /*export function doneStatus(){ 
@@ -20,8 +25,5 @@ const doingBox = document.getElementById('checkbox__doing');
 const toDoBox = document.getElementById('checkbox__to-do');
 const taskElement = document.querySelectorAll('li');
  
-export function toDoStatus(i){
-    if(i.target === taskElement){
-        i.target.classList.toggle('task__to-do');
-    }
+
 }*/
