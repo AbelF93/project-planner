@@ -1,13 +1,13 @@
-import { daysStay } from "./modules/daysStay.js";
+//import { daysStay } from "./modules/daysStay.js";
 import { addList, taskButton } from "./modules/task_creation.js";
-import { sortTasks } from "./sortTasks.js";
+//import { sortTasks } from "./sortTasks.js";
 
 
 // Button add Task
 taskButton.addEventListener("click", addList);
 
-// Add Due Date
 
+/*
 const message = document.createElement("p");
 
 const body = document.querySelector("body");
@@ -61,4 +61,4 @@ taskInput.addEventListener("keyup", function(event) {
     localStorage.setItem("tasks", taskList.innerHTML);
     taskInput.value = "";
   }
-});
+});*/

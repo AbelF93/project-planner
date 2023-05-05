@@ -1,6 +1,6 @@
 
 //import { daysStay } from "./daysStay.js";
-//import { deleteTaskHandler } from "./deleteTaskHandler.js";
+import { deleteTaskHandler } from "./deleteTaskHandler.js";
 
 
 const inputList = document.getElementById("task-storage");
@@ -25,21 +25,21 @@ export function addList() {
     const taskItem = document.createElement("li");
     taskItem.classList.add("task-list__task");
     taskItem.innerHTML = inputList.value;
-
+/*
     const deleteTask = document.createElement("button");
     deleteTask.type = 'button';
     deleteTask.classList.add('delete-task');
-    deleteBtn.deleteTaskHandler(taskItem);
+    deleteBtn.addEventListener(deleteTaskHandler);*/
 
     const taskContent = document.createElement("p");
     taskContent.classList.add("task-list__content");
     taskContent.innerHTML = inputContent.value;
-    //const taskDate = document.createElement("p");
-   // taskDate.classList.add("task-list__date");
-   //taskDate.innerHTML = inputDate.value;
+    const taskDate = document.createElement("p");
+   taskDate.classList.add("task-list__date");
+   taskDate.innerHTML = inputDate.value;
     taskItem.appendChild(taskContent);
-   // taskItem.appendChild(taskDate);
-    taskItem.appendChild(deleteTask);
+    taskItem.appendChild(taskDate);
+   /* taskItem.appendChild(deleteTask);*/
     taskList.appendChild(taskItem);
   }
 
@@ -49,7 +49,7 @@ export function addList() {
 
 }
 
-
+/*
 const inputElement = document.createElement("input");
 inputElement.type = "date";
 inputElement.id = "dueDate";
@@ -63,4 +63,4 @@ inputElement.addEventListener("change", () => {
 });
 
 //body.appendChild(inputElement);
-//body.appendChild(message);
+//body.appendChild(message);*/
