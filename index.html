@@ -16,7 +16,9 @@
         <div>
             <input type="input" id="task-storage" placeholder="add a task name">
             <input type="input" id="task-content" placeholder="add a description">
-            <input type="input" id="task-date" placeholder="add a deadline in number">
+            <label for="date"></label>
+            <input type="date" id="task-date" name="date">
+            <button type="button" onclick="document.getElementById('date').click()">Choose a due date</button>
             <button class="task-button"></button>
         </div>
 
