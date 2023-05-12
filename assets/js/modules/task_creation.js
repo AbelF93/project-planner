@@ -51,6 +51,7 @@ export function addList() {
                    toDoCheckbox.setAttribute("type","checkbox");
                    toDoCheckbox.setAttribute("id","checkbox__to-do");
                    toDoCheckbox.setAttribute("name","to-do");
+                  toDoCheckbox.checked = true;
                    const toDoLabel = document.createElement('label');
                    toDoLabel.setAttribute("for","to-do");
                    toDoLabel.setAttribute("id","label__to-do");
@@ -76,18 +77,18 @@ export function addList() {
                     doneLabel.setAttribute("id","label__done");
                     const doneLabelText = document.createTextNode('Done');
        // Parenting
-       doneLabel.appendChild(doneLabelText);
-       doneStatusBox.appendChild(doneLabel);
-       doneStatusBox.appendChild(doneCheckbox);
-     statusCheckboxes.appendChild(doneStatusBox);
-        doingLabel.appendChild(doingLabelText);
-       doingStatusBox.appendChild(doingLabel);
-       doingStatusBox.appendChild(doingCheckbox);
-     statusCheckboxes.appendChild(doingStatusBox);
        toDoLabel.appendChild(toDoLabelText);
        toDoStatusBox.appendChild(toDoLabel);
        toDoStatusBox.appendChild(toDoCheckbox);
      statusCheckboxes.appendChild(toDoStatusBox);
+       doingLabel.appendChild(doingLabelText);
+       doingStatusBox.appendChild(doingLabel);
+       doingStatusBox.appendChild(doingCheckbox);
+     statusCheckboxes.appendChild(doingStatusBox);
+       doneLabel.appendChild(doneLabelText);
+       doneStatusBox.appendChild(doneLabel);
+       doneStatusBox.appendChild(doneCheckbox);
+     statusCheckboxes.appendChild(doneStatusBox);
      taskItem.appendChild(statusCheckboxes);
 
     taskItem.appendChild(taskContent);

@@ -5,7 +5,7 @@ taskButton.addEventListener('click', addList);
 import { doneBox,doneStatus } from "./modules/task_status.js";
   
 doneBox.addEventListener('click',doneStatus);
-=======*/
+*/
 import { daysStay } from "./modules/daysStay.js";
 import { addList, taskButton } from "./modules/task_creation.js";
 import { sortTasks } from "./sortTasks.js";
