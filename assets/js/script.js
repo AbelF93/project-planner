@@ -1,9 +1,13 @@
 import { daysStay } from "./modules/daysStay.js";
+import { displayTasks } from "./modules/local_storage.js";
 import { addList, taskButton } from "./modules/task_creation.js";
 //import { updateTaskStatus } from "./modules/task_status.js";
 import { sortTasks } from "./sortTasks.js";
 //import {toDoBox,doingBox,doneBox} from "./modules/task_status.js";
 // Button add Task
+
+
+displayTasks();
 taskButton.addEventListener("click", addList);
 
 const dueDateElem = document.querySelector(".task-list__date");
@@ -39,3 +43,6 @@ sortSelect.appendChild(sortOptionDays);
 
 document.body.appendChild(sortContainer);
 
+const taskItem = document.querySelectorAll("li");
+
+saveTasks();

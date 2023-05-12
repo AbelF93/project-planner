@@ -1,8 +1,5 @@
-/*export const doneBox = document.getStatusById('checkbox__done');
-export const doingBox = document.getStatusById('checkbox__doing');
-export const toDoBox = document.getStatusById('checkbox__to-do');*/
- 
-// const checkboxes = task.querySelectorAll('input[type="checkbox"]');
+const task = document.querySelector('li');
+const checkboxes = task.querySelectorAll('input[type="checkbox"]');
 
 export function updateTaskStatus(task) {
   // Get all the checkboxes within the task element
