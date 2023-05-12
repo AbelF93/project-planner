@@ -1,15 +1,8 @@
-/*
-import { addList, taskButton } from "./modules/task_creation.js";
-
-taskButton.addEventListener('click', addList);  
-import { doneBox,doneStatus } from "./modules/task_status.js";
-  
-doneBox.addEventListener('click',doneStatus);
-*/
 import { daysStay } from "./modules/daysStay.js";
 import { addList, taskButton } from "./modules/task_creation.js";
+//import { updateTaskStatus } from "./modules/task_status.js";
 import { sortTasks } from "./sortTasks.js";
-
+//import {toDoBox,doingBox,doneBox} from "./modules/task_status.js";
 // Button add Task
 taskButton.addEventListener("click", addList);
 

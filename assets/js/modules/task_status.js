@@ -1,29 +1,40 @@
-//adding a class by using checkboxes
-const statusCheckboxes = document.querySelectorAll('input[type="checkbox"]');
-
-export const doneBox = document.getElementById('checkbox__done');
-const doingBox = document.getElementById('checkbox__doing');
-const toDoBox = document.getElementById('checkbox__to-do');
-
-export function doneStatus(e){
-    if(e.target === "LI"){
-        e.target.classList.toggle('task__done');
-    }
-};
-
-// Add event listeners to each checkbox
-/*export function doneStatus(){ 
-   const task = document.querySelector('li');
-   if (task !== 0){
-    task.classList.toggle('task__done');
-   }   
-}
-
-
-const doneBox = document.getElementById('checkbox__done');
-const doingBox = document.getElementById('checkbox__doing');
-const toDoBox = document.getElementById('checkbox__to-do');
-const taskElement = document.querySelectorAll('li');
+/*export const doneBox = document.getStatusById('checkbox__done');
+export const doingBox = document.getStatusById('checkbox__doing');
+export const toDoBox = document.getStatusById('checkbox__to-do');*/
  
+// const checkboxes = task.querySelectorAll('input[type="checkbox"]');
 
-}*/
+export function updateTaskStatus(task) {
+  // Get all the checkboxes within the task element
+  
+  // Loop through the checkboxes to see which one is checked
+  let checkedCount = 0;
+  let checkedIndex = -1;
+  checkboxes.forEach((checkbox, index) => {
+    if (checkbox.checked) {
+      checkedCount++;
+      checkedIndex = index;
+    }
+  });
+
+  // If there is only one checkbox checked, add the appropriate class to the task element
+  if (checkedCount === 1) {
+    switch (checkedIndex) {
+      case 0:
+        task.classList.add('to-do');
+        task.classList.remove('doing', 'done');
+        break;
+      case 1:
+        task.classList.add('doing');
+        task.classList.remove('to-do', 'done');
+        break;
+      case 2:
+        task.classList.add('done');
+        task.classList.remove('to-do', 'doing');
+        break;
+    }
+  } else {
+    // If no checkboxes are checked or more than one is checked, remove all classes from the task element
+    task.classList.remove('to-do', 'doing', 'done');
+  }
+}

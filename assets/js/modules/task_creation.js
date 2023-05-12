@@ -27,6 +27,7 @@ export function addList() {
   } else {//Create a task name
     const taskItem = document.createElement("li");
     taskItem.classList.add("task-list__task");
+    taskItem.setAttribute('id','status-to-update');
     taskItem.innerHTML = inputList.value;
     taskItem.dataset.duedate = inputDate.value;
     // Create a description
