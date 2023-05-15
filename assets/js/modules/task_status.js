@@ -1,7 +1,7 @@
 const task = document.querySelector('li');
 const checkboxes = task.querySelectorAll('input[type="checkbox"]');
 
-export function updateTaskStatus(task) {
+/*export function updateTaskStatus(task) {
   // Get all the checkboxes within the task element
   
   // Loop through the checkboxes to see which one is checked
@@ -34,4 +34,4 @@ export function updateTaskStatus(task) {
     // If no checkboxes are checked or more than one is checked, remove all classes from the task element
     task.classList.remove('to-do', 'doing', 'done');
   }
-}
+}*/

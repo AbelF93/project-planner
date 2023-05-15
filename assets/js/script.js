@@ -1,10 +1,8 @@
 import { daysStay } from "./modules/daysStay.js";
 import { displayTasks } from "./modules/local_storage.js";
 import { addList, taskButton } from "./modules/task_creation.js";
-//import { updateTaskStatus } from "./modules/task_status.js";
 import { sortTasks } from "./sortTasks.js";
-//import {toDoBox,doingBox,doneBox} from "./modules/task_status.js";
-// Button add Task
+
 
 
 displayTasks();
@@ -43,6 +41,32 @@ sortSelect.appendChild(sortOptionDays);
 
 document.body.appendChild(sortContainer);
 
-const taskItem = document.querySelectorAll("li");
+const page = document.querySelector('body');
+/*document.addEventListener('DOMContentLoaded', function(){
+  page.addEventListener('change',statusChanged);
+})*/
+page.addEventListener('change',statusUpdate);
 
-saveTasks();
+function statusUpdate(e){
+  let parent = e.target.parentElement.parentElement.parentElement;
+  const li = document.querySelector('li');
+  console.log(parent.classList);
+  e.target.addEventListener('click',statusChange);
+  function statusChange(){
+        if (e.target.id=='chexbox__to-do'){
+          parent.classList.add('to-do');
+          parent.classList.remove('doing', 'done');
+        }
+        else if (e.target.id=='chexbox__doing'){
+          parent.classList.add('doing');
+          parent.classList.remove('to-do', 'done');
+        }
+        else if (e.target.id=='chexbox__done'){
+          parent.classList.add('done');
+          parent.classList.remove('to-do', 'doing');
+        }
+        else {
+          parent.classList.remove('to-do','doing','done');
+        }
+}
+}

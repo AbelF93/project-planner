@@ -1,6 +1,7 @@
 
 import { daysStay } from "./daysStay.js";
 import { deleteTaskHandler } from "./deleteTaskHandler.js";
+import { saveTasks } from "./local_storage.js";
 
 const inputList = document.getElementById("task-storage");
 const inputContent = document.getElementById("task-content");
@@ -52,7 +53,7 @@ export function addList() {
                    toDoCheckbox.setAttribute("type","checkbox");
                    toDoCheckbox.setAttribute("id","checkbox__to-do");
                    toDoCheckbox.setAttribute("name","to-do");
-                  toDoCheckbox.checked = true;
+                 // toDoCheckbox.checked = true;
                    const toDoLabel = document.createElement('label');
                    toDoLabel.setAttribute("for","to-do");
                    toDoLabel.setAttribute("id","label__to-do");
@@ -107,5 +108,7 @@ export function addList() {
   inputList.value = "";
   inputContent.value = "";
   inputDate.value = "";
+
+  saveTasks();
 }
 
