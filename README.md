@@ -1,1 +1,1 @@
-# project-planner
+# This project is here to recreate another to-do list, but by sorting the different taks by their due dates, mentionning for when it is supposed done and if the task has been started or not, and if it's done.
