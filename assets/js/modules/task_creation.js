@@ -109,6 +109,6 @@ export function addList() {
   inputContent.value = "";
   inputDate.value = "";
 
-  saveTasks();
+  //saveTasks();
 }
 

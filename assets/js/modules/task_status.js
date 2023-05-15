@@ -1,5 +1,35 @@
-const task = document.querySelector('li');
-const checkboxes = task.querySelectorAll('input[type="checkbox"]');
+export function statusUpdate(e){
+  let parent = e.target.parentElement.parentElement.parentElement;
+  const li = document.querySelector('li');
+  console.log(parent.classList);
+  e.target.addEventListener('click',statusChange);
+  function statusChange(){
+        if (e.target.id=='chexbox__to-do'){
+          parent.classList.add('to-do');
+          parent.classList.remove('doing', 'done');
+        }
+        else if (e.target.id=='chexbox__doing'){
+          parent.classList.add('doing');
+          parent.classList.remove('to-do', 'done');
+        }
+        else if (e.target.id=='chexbox__done'){
+          parent.classList.add('done');
+          parent.classList.remove('to-do', 'doing');
+        }
+        else {
+          parent.classList.remove('to-do','doing','done');
+        }
+}
+}
+
+
+
+
+
+
+
+
+
 
 /*export function updateTaskStatus(task) {
   // Get all the checkboxes within the task element

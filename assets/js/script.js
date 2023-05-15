@@ -1,6 +1,7 @@
 import { daysStay } from "./modules/daysStay.js";
 import { displayTasks } from "./modules/local_storage.js";
 import { addList, taskButton } from "./modules/task_creation.js";
+import { statusUpdate } from "./modules/task_status.js";
 import { sortTasks } from "./sortTasks.js";
 
 
@@ -47,26 +48,3 @@ const page = document.querySelector('body');
 })*/
 page.addEventListener('change',statusUpdate);
 
-function statusUpdate(e){
-  let parent = e.target.parentElement.parentElement.parentElement;
-  const li = document.querySelector('li');
-  console.log(parent.classList);
-  e.target.addEventListener('click',statusChange);
-  function statusChange(){
-        if (e.target.id=='chexbox__to-do'){
-          parent.classList.add('to-do');
-          parent.classList.remove('doing', 'done');
-        }
-        else if (e.target.id=='chexbox__doing'){
-          parent.classList.add('doing');
-          parent.classList.remove('to-do', 'done');
-        }
-        else if (e.target.id=='chexbox__done'){
-          parent.classList.add('done');
-          parent.classList.remove('to-do', 'doing');
-        }
-        else {
-          parent.classList.remove('to-do','doing','done');
-        }
-}
-}
