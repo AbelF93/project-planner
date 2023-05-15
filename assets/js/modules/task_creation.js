@@ -2,6 +2,7 @@
 import { daysStay } from "./daysStay.js";
 import { deleteTaskHandler } from "./deleteTaskHandler.js";
 import { saveTasks } from "./local_storage.js";
+import { statusUpdate } from "./task_status.js";
 
 const inputList = document.getElementById("task-storage");
 const inputContent = document.getElementById("task-content");
@@ -28,7 +29,6 @@ export function addList() {
   } else {//Create a task name
     const taskItem = document.createElement("li");
     taskItem.classList.add("task-list__task");
-    taskItem.setAttribute('id','status-to-update');
     taskItem.innerHTML = inputList.value;
     taskItem.dataset.duedate = inputDate.value;
     // Create a description
@@ -51,32 +51,38 @@ export function addList() {
               toDoStatusBox.setAttribute("class","status-checkbox");
                    const toDoCheckbox = document.createElement('input');
                    toDoCheckbox.setAttribute("type","checkbox");
-                   toDoCheckbox.setAttribute("id","checkbox__to-do");
-                   toDoCheckbox.setAttribute("name","to-do");
-                 // toDoCheckbox.checked = true;
+				   toDoCheckbox.setAttribute("class","checkbox");
+           toDoCheckbox.setAttribute("class","checkbox");
+                   toDoCheckbox.setAttribute("class","checkbox__to-do");
+                   toDoCheckbox.setAttribute("data-status","to-do");
+                  // toDoCheckbox.checked = true;
                    const toDoLabel = document.createElement('label');
                    toDoLabel.setAttribute("for","to-do");
-                   toDoLabel.setAttribute("id","label__to-do");
+                   toDoLabel.setAttribute("class","label__to-do");
                    const toDoLabelText = document.createTextNode('To Do');
               const doingStatusBox = document.createElement('div');
               doingStatusBox.setAttribute("class","status-checkbox");
                     const doingCheckbox = document.createElement('input');
                     doingCheckbox.setAttribute("type","checkbox");
-                    doingCheckbox.setAttribute("id","checkbox__doing");
+					doingCheckbox.setAttribute("class","checkbox");
+                    doingCheckbox.setAttribute("class","checkbox__doing");
+                    doingCheckbox.setAttribute("data-status","doing");
                     doingCheckbox.setAttribute("name","doing");
                     const doingLabel = document.createElement('label');
                     doingLabel.setAttribute("for","doing");
-                    doingLabel.setAttribute("id","label__doing");
+                    doingLabel.setAttribute("class","label__doing");
                     const doingLabelText = document.createTextNode('Doing');
               const doneStatusBox = document.createElement('div');
               doneStatusBox.setAttribute("class","status-checkbox");
                     const doneCheckbox = document.createElement('input');
                     doneCheckbox.setAttribute("type","checkbox");
-                    doneCheckbox.setAttribute("id","checkbox__done");
+					doneCheckbox.setAttribute("class","checkbox");
+                    doneCheckbox.setAttribute("class","checkbox__done");
+                    doneCheckbox.setAttribute("data-status","done");
                     doneCheckbox.setAttribute("name","done");
                     const doneLabel = document.createElement('label');
                     doneLabel.setAttribute("for","done");
-                    doneLabel.setAttribute("id","label__done");
+                    doneLabel.setAttribute("class","label__done");
                     const doneLabelText = document.createTextNode('Done');
        // Parenting
        toDoLabel.appendChild(toDoLabelText);
@@ -109,6 +115,8 @@ export function addList() {
   inputContent.value = "";
   inputDate.value = "";
 
+  const page = document.querySelector('body');
+  page.addEventListener('change',statusUpdate);
   //saveTasks();
 }
 

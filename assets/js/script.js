@@ -1,12 +1,12 @@
 import { daysStay } from "./modules/daysStay.js";
-import { displayTasks } from "./modules/local_storage.js";
+//import { displayTasks } from "./modules/local_storage.js";
 import { addList, taskButton } from "./modules/task_creation.js";
-import { statusUpdate } from "./modules/task_status.js";
+import { statusUpdate, updateTaskStatus } from "./modules/task_status.js";
 import { sortTasks } from "./sortTasks.js";
 
 
 
-displayTasks();
+//displayTasks();
 taskButton.addEventListener("click", addList);
 
 const dueDateElem = document.querySelector(".task-list__date");
@@ -42,9 +42,7 @@ sortSelect.appendChild(sortOptionDays);
 
 document.body.appendChild(sortContainer);
 
-const page = document.querySelector('body');
-/*document.addEventListener('DOMContentLoaded', function(){
-  page.addEventListener('change',statusChanged);
-})*/
-page.addEventListener('change',statusUpdate);
+
+//Function to add a class using status-checkboxes
+
 
